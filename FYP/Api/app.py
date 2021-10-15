@@ -6,11 +6,13 @@ from math import acos,degrees
 from flask_restful import Resource,Api
 from flask import Flask
 from math import acos,degrees 
-
+from logging import FileHandler,WARNING
 
 app = Flask(__name__)
 api=Api(app)
 #squats 
+file_handler = FileHandler('errorlog.txt')
+file_handler.setLevel(WARNING)
 #homepage
 # user_path="C:\\Users\\admin\\Desktop\\Kaggle\\Dataset result\\gender_submission.csv"
 class Squats(Resource):
